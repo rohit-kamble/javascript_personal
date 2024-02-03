@@ -1,0 +1,29 @@
+<!-- Append child = this used for add node to end of list of childern of its specefic parent node -->
+<!-- This Example of already has child node append to another parent node -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main">
+        <h1 id="header">
+            Rohit
+        </h1>
+    </div>
+    <section id="parent">
+
+    </section>
+</body>
+<script>
+    var main=document.getElementById("main");
+    var header=document.getElementById("header");
+    var parent=document.getElementById("parent");
+    parent.appendChild(header);
+    console.log(parent);
+    console.log(main);
+</script>
+</html>

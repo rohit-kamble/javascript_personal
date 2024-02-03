@@ -1,0 +1,58 @@
+<!-- Todo simple Application by Using CreatElement -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .text-center {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="main" class="text-center">
+    <h1>Todo Application</h1>
+    <input id="input" value="" placeholder="add list">
+    <button id="addlist" onclick="myFunction()">Add</button>
+    <button id="remove" onclick="deleted()">delete</button>
+    </div>
+    <script>
+        var fak=[];
+        // function deletedata() {
+        //     console.log("hi");
+        // }
+        function myFunction() {
+            
+            var input=document.getElementById("input");
+            var data=document.getElementById("input").value;
+            var new_Node=document.createElement("h1");
+            var main=document.getElementById("main");
+            var span = document.createElement('span');
+            span.textContent = " X";
+            var remove=document.getElementsByTagName(buttton);
+
+            var new_text=document.createTextNode(data+""+remove);
+            new_Node.appendChild(new_text);
+            main.appendChild(new_Node);
+            fak.push(input.value);
+
+                span.setAttribute("id","deleted")
+                span.setAttribute("onclick",'deletedata()');
+            
+            // var test=document.getElementsByClassName(span);
+            console.log(input);
+            console.log(data);
+            console.log(new_Node);
+            console.log(new_text);
+            console.log(span);
+            console.log(fak);
+            span.onclick=function(){console.log("hi")};
+    
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+.game_title {
+  text-align: center;
+}
+
+.container-style {
+  background-color: black;
+  height: 300px;
+  width: 300px;
+  margin: auto;
+  position: relative;
+}
+
+.snake {
+  position: absolute;
+  inset: 50%;
+  width: 10px;
+  height: 10px;
+  background: white;
+}

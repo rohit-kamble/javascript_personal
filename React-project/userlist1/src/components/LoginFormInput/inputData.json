@@ -1,0 +1,20 @@
+[
+    {
+    "name": "username",
+    "type": "text",
+    "lable": "username",
+    "error": "username is required"
+  },{
+    "name": "email",
+    "type": "text",
+    "lable": "Email",
+    "error": "email is required",
+    "secondaryError": "enter valid email"
+  },
+  {
+    "name": "password",
+    "type": "text",
+    "lable": "Password",
+    "error": "password is required"
+  }
+]

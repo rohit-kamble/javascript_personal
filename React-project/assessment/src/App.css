@@ -1,0 +1,27 @@
+.App {
+  width: 300px;
+  margin: auto;
+}
+
+.heading {
+  font-weight: 500;
+}
+
+.search-input {
+  border: 1px solid lightgray;
+  border-radius: 8px;
+  background: transparent url('./asset/search-icon.svg') no-repeat 6px center;
+  background-size: 14px;
+  font-size: 10px;
+  width: 268px;
+  padding: 6px 6px 6px 24px;
+  color: lightgray;
+}
+
+.search-input::placeholder {
+  color: lightgray;
+}
+
+.search-input:focus-visible {
+  outline: unset;
+}

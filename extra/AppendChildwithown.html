@@ -1,0 +1,30 @@
+<!-- Creating new Element to H2 -->
+<!-- use createElement = tag (eg.<h1>...<h6>,<span>...) -->
+<!-- In this Example appending new node H2 to div  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main">
+        <h1 id="header">Large</h1>
+        <h1 id="child">Medium</h1>
+    </div>
+    <script>
+        var main=document.getElementById("main");
+        var new_node=document.createElement("h2");
+        var new_text=document.createTextNode("Low");
+        new_node.setAttribute("id","sibiling");
+        new_node.setAttribute("class","sibiling");
+        main.appendChild(new_node);
+       
+        console.log(main);
+        new_node.appendChild(new_text);
+        console.log(new_text);
+    </script>
+</body>
+</html>

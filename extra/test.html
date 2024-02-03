@@ -1,0 +1,83 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <p>rohit</p>
+        <h1 id="second"></h1><h2 id="minut"></h2>
+    </body>
+    <script>
+        // "use strict";
+        // var data= () => {
+        //     console.log("this", this)
+        // }
+        // var f = data("red");
+
+        // const data = {
+        //     name: "rohit",
+        //     lastName: "kamble",
+        //     fun: ()=>{
+        //         console.log(this.name)
+        //     }
+        // }
+        // data.fun();
+        // console.log("ouside this", this);
+        // class rohit {
+        //     constructor() {
+        //         this.count = 0;
+        //         this.min=0;
+        //         console.log("this in Class=",this);
+        //         setInterval(()=> {
+
+        //         this.count == 60 ? this.count=1: document.getElementById("second").innerHTML = this.count++;
+        //         this.count == 59 && document.getElementById("minut").innerHTML == this.min++
+        //         }
+        //         ,100);
+
+        //         this.show();
+        //     }
+        //     show =()=> console.log("this inside", this)
+        // }
+        // let roh = new rohit();
+
+
+//    var d = function() {
+//     //    'use strict';
+//         console.log("this", this);
+//    }
+
+//     console.log(d())
+    // function test(n) {
+    //     console.log(n)
+    // };
+
+    // function WhoIsThis(cb) {
+    //     var data = "rohit";
+    //     cb(data);
+    // };
+
+	// var x =WhoIsThis(test);
+    // console.log(x);
+    // 'use strict';
+    // console.log(this === window)
+
+
+    // constructor
+    var person = {
+        name:"rohit",
+        sirName: "LastName",
+        fullName: function() {
+            return this.name + this.sirName;
+        }
+    }
+
+    let newFun = person.fullName.bind(person)
+   console.log(newFun());
+
+
+
+
+    // let ramu = new person("ramu", "d");
+    // ramu.height = 10;
+    // console.log("name", ramu)
+    </script>
+</html>

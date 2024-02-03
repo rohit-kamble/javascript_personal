@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="animate('target')">
+    <h1 id="target">Rohit</h1>
+</body>
+<script>
+    function animate(id){
+        const textId = document.getElementById(id);
+        const textNode =textId.childNodes[0];
+        let txt = textNode.data;
+        setInterval(function(){
+            txt = txt[txt.length-1] + txt.substring(0,txt.length-1);
+            textNode.data = txt;
+        },100)
+        // console.log("txt",txt);
+        // console.log(id);
+    }
+    // const responsData = new XMLHttpRequest();
+    // responsData.onload = ((res)=> {
+    //     const data = JSON.parse(responsData.response);
+    //     console.log(data.data)
+    //     // raj(data.data[0].first_name);
+    // }
+    // );
+    // responsData.onerror = ((err)=> console.log(err))
+    // responsData.open('Get', 'https://reqres.in/api/users')
+    // responsData.send();
+
+    // const ranju = (name)=> {
+    //     console.log("ranju name**", name);
+    // }
+
+    // const rohit = (name) =>{
+    //     // ranju(ranjuname);
+    //     console.log("rohit function", name);
+    // }
+
+// function one(a, two){
+//     setTimeout(()=>{
+//         console.log("=>", a)
+//         two(two)
+//     },1000)
+
+// }
+// function two(b,three){
+//     setTimeout(()=>{
+//         console.log("=>", b)
+//         three(three)
+//     },3000)
+
+// }
+// function three(c){
+//     console.log("=>", c)
+// }
+
+// const test = (a,b,c) => {one(a,()=> { two(b,()=> three(c))})};
+// test("a", "b", "c")
+
+// const d= new Promise((resolved, rej)=>{
+//     const responsData = new XMLHttpRequest();
+//     responsData.onload = ((res)=> {
+//         const data = JSON.parse(responsData.response);
+//         resolved(data);
+//     }
+//     );
+//     responsData.onerror = ((err)=> console.log(err))
+//     responsData.open('Get', 'https://reqres.in/api/users')
+//     responsData.send();
+// })
+// d.then(res=> {console.log("RES**", res)})
+// console.log("rohit")
+
+
+
+
+// function resolveAfter2Seconds() {
+//   const data = new Promise(resolved => {
+//     const responsData = new XMLHttpRequest();
+//     responsData.onload = ((res)=> {
+//         const data = JSON.parse(responsData.response);
+//         resolved(data);
+//     }
+//     );
+//     responsData.onerror = ((err)=> console.log(err))
+//     responsData.open('Get', 'https://reqres.in/api/users')
+//     responsData.send();
+//   });
+//   return data
+// }
+
+// async function asyncCall() {
+//   console.log('calling');
+//   const result = await resolveAfter2Seconds();
+//   console.log(result);
+//   // expected output: "resolved"
+// }
+
+// asyncCall();
+// function rohit() {
+//     return new Promise((resolved, reject)=>{
+//         const responsData = new XMLHttpRequest();
+//     responsData.onload=((res)=>{
+//         resolved(responsData.status)
+//     })
+//     responsData.onerror =((err)=> console.log(err))
+//     responsData.open('GET', 'https://reqres.in/api/users')
+//     responsData.send();
+//     })
+// }
+
+
+// async function hello() { return rohit() };
+
+// hello().then(value => console.log(value))
+
+function a(){
+      return new Promise((resolved, reject)=>{
+        setTimeout(()=>{
+            resolved("1")
+       },3000)
+      })
+}
+
+function b(print){
+    return new Promise((resolved, reject)=>{
+        setTimeout((print)=>{
+            console.log(print)
+            resolved("2")
+       },3000, print)
+      })
+}
+a().then(res=>{ return b(res)}).then(res=>console.log(res));
+</script>
+</html>
