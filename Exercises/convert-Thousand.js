@@ -25,33 +25,30 @@
 //     return result.join('');
 // }
 function ConvertThousand(num) {
-    const convertToStr = num.toString().split("");
-    const test = convertToStr.reverse();
-    const addComma= [];
-    let flag = true;
-    if(convertToStr.length <= 3) {
-        return num.toString();
-    }
-    else {
-        test.forEach((x, i) => {
-            if(flag && i === 2){
-                addComma.push(x)
-                addComma.push(',')
-                flag = false;
-            }
-            else if(!flag && i % 2 === 0) {
-                addComma.push(x)
-                addComma.push(',')
-            }
-            else {
-                addComma.push(x)
-            }
-        });
-    }
-    const final = addComma.reverse();
-    if(final[0] === ",") {
-        final.shift();
-    }
-    console.log("addComma==", final.join(""));
+  const convertToStr = num + "";
+  const test = convertToStr.split("").reverse();
+  const addComma = [];
+  let flag = true;
+  if (convertToStr.length <= 3) {
+    return num.toString();
+  } else {
+    test.forEach((x, i) => {
+      if (flag && i === 2) {
+        addComma.push(x);
+        addComma.push(",");
+        flag = false;
+      } else if (!flag && i % 2 === 0) {
+        addComma.push(x);
+        addComma.push(",");
+      } else {
+        addComma.push(x);
+      }
+    });
+  }
+  const final = addComma.reverse();
+  if (final[0] === ",") {
+    final.shift();
+  }
+  console.log("addComma==", final.join(""));
 }
-ConvertThousand(10000);
+ConvertThousand(100000);

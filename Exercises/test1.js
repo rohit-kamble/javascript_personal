@@ -873,3 +873,60 @@
 //   }
 // }
 // console.log("==", ans);
+
+// const data = [1, 2, 3];
+// Array.prototype.myCustomFilter = function (fu) {
+//   let filterData = [];
+//   for (let i = 0; i < this.length; i++) {
+//     if (fu(this[i])) filterData.push(this[i]);
+//   }
+//   return filterData;
+// };
+
+// console.log(
+//   data.myCustomFilter(function (item) {
+//     if (item > 2) return item;
+//   })
+// );
+
+// Array.prototype.cutomMap = function (fun) {
+//   let filterData = [];
+//   for (let i = 0; i < this.length; i++) {
+//     filterData.push(fun(this[i]));
+//   }
+//   return filterData;
+// };
+
+// const Ans = data.cutomMap((item) => item * 2);
+// console.log("---", Ans);
+
+// const memoRizationFun = (fun) => {
+//   let cahe = {};
+
+//   return (...arg) => {
+//     console.log("--", cahe);
+//     if (cahe[`${arg[0]}+${arg[1]}`]) {
+//       return cahe[`${arg[0]}+${arg[1]}`];
+//     } else {
+//       const ans = fun(arg[0], arg[1]);
+//       cahe[`${arg[0]}+${arg[1]}`] = ans;
+//       return ans;
+//     }
+//   };
+// };
+
+// const show = memoRizationFun((a, b) => a + b);
+// console.time();
+// console.log(show(8, 6));
+// console.timeEnd();
+// console.time();
+// console.log(show(15, 6));
+// console.timeEnd();
+// console.time();
+// console.log(show(12, 6));
+// console.timeEnd();
+
+const parent = (fun) => {
+  let a = 10,
+    b = 20;
+};

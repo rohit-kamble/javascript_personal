@@ -10,7 +10,8 @@ import React, { useRef, useState } from "react";
 import { colors, defaultStyle } from "../styles/styles";
 import Header from "./Header";
 import Carousel from "react-native-snap-carousel";
-import { Avatar } from "react-native-paper";
+import { Avatar, Button } from "react-native-paper";
+import Toast from "react-native-toast-message";
 
 const SLIDER_WIDTH = Dimensions.get("window").width;
 const ITEM_WIDTH = SLIDER_WIDTH;
@@ -20,11 +21,10 @@ const ProductDetails = ({
     params: { id },
   },
 }) => {
-  console.log("route---", id && id);
   const name = "Mack book";
   const price = 5661;
   const description = "prdouct Info";
-  const stock = 3;
+  const stock = 2;
   const isCarousal = useRef(null);
   const [quantity, setQuntity] = useState(1);
   const images = [
@@ -46,6 +46,20 @@ const ProductDetails = ({
     if (quantity <= 1) return;
     setQuntity((prv) => prv - 1);
   };
+
+  const addToCartHandler = () => {
+    console.log('a')
+    if(stock === 0) return Toast.show({
+      type: 'error',
+      text1: 'Out of Stock',
+    });
+    else {
+      Toast.show({
+        type: 'success',
+        text1: "Added to Cart"
+      })
+    }
+  }
   return (
     <View
       style={{
@@ -152,7 +166,7 @@ const ProductDetails = ({
             >
               {quantity}
             </Text>
-            <TouchableOpacity onPress={incrementQty}>
+            <TouchableOpacity onPress={incrementQty} activeOpacity={0.8}>
               <Avatar.Icon
                 icon={"plus"}
                 size={20}
@@ -166,6 +180,11 @@ const ProductDetails = ({
             </TouchableOpacity>
           </View>
         </View>
+        <TouchableOpacity activeOpacity={0.8} onPress={addToCartHandler}>
+          <Button icon={"cart"} style={style.btn}
+           textColor={colors.color2}
+          >Add to Cart</Button>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -191,5 +210,10 @@ const style = StyleSheet.create({
     resizeMode: "contain",
     height: 200,
   },
+  btn: {
+    backgroundColor: colors.colors3,
+    borderRadius: 100,
+    padding: 5,
+  }
 });
 export default ProductDetails;
