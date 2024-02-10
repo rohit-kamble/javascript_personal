@@ -1,7 +1,7 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { colors, defaultStyle } from '../styles/styles';
 import { Avatar, Button } from 'react-native-paper';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ButtonBox from '../components/ButtonBox';
 import Footer from '../components/Footer';
 import Loader from '../components/Loader';
@@ -9,7 +9,7 @@ const user = {
   name: 'rohit Kamble',
   email: 'abc@gmail.com',
 };
-export default function Profile({ navigation }) {
+export default function Profile({ navigation, route }) {
   const [avatar, setAvatar] = useState(null);
   const loading = false;
   const navigateHandlere = (text) => {
@@ -33,6 +33,12 @@ export default function Profile({ navigation }) {
         break;
     }
   };
+  useEffect(() => {
+    if (route.params?.image) {
+      setAvatar(route.params?.image);
+      //dispatch update
+    }
+  }, [route.params]);
   return (
     <>
       <View style={defaultStyle}>
@@ -47,7 +53,7 @@ export default function Profile({ navigation }) {
               <Avatar.Image
                 size={100}
                 source={{
-                  uri: avatar,
+                  uri: avatar ? avatar : null,
                 }}
                 style={{
                   backgroundColor: colors.colors3,

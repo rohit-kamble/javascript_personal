@@ -11,7 +11,7 @@ export default function Header({ isBack, emptyCart = false }) {
   };
   console.log('route---', route.name);
   return (
-    <>
+    <View style={{ height: 40 }}>
       {isBack && (
         <View>
           <TouchableOpacity
@@ -36,7 +36,7 @@ export default function Header({ isBack, emptyCart = false }) {
       <TouchableOpacity
         style={{
           position: 'absolute',
-          top: 40,
+          top: 10,
           right: 20,
           zIndex: 10,
         }}
@@ -50,6 +50,6 @@ export default function Header({ isBack, emptyCart = false }) {
           color={route.name === 'productdetails' ? colors.colors2 : colors.colors3}
         />
       </TouchableOpacity>
-    </>
+    </View>
   );
 }

@@ -1,19 +1,12 @@
-import {
-  View,
-  StyleSheet,
-  Dimensions,
-  Image,
-  Text,
-  TouchableOpacity,
-} from "react-native";
-import React, { useRef, useState } from "react";
-import { colors, defaultStyle } from "../styles/styles";
-import Header from "./Header";
-import Carousel from "react-native-snap-carousel";
-import { Avatar, Button } from "react-native-paper";
-import Toast from "react-native-toast-message";
+import { View, StyleSheet, Dimensions, Image, Text, TouchableOpacity } from 'react-native';
+import React, { useRef, useState } from 'react';
+import { colors, defaultStyle } from '../styles/styles';
+import Header from './Header';
+import Carousel from 'react-native-snap-carousel';
+import { Avatar, Button } from 'react-native-paper';
+import Toast from 'react-native-toast-message';
 
-const SLIDER_WIDTH = Dimensions.get("window").width;
+const SLIDER_WIDTH = Dimensions.get('window').width;
 const ITEM_WIDTH = SLIDER_WIDTH;
 
 const ProductDetails = ({
@@ -21,20 +14,20 @@ const ProductDetails = ({
     params: { id },
   },
 }) => {
-  const name = "Mack book";
+  const name = 'Mack book';
   const price = 5661;
-  const description = "prdouct Info";
+  const description = 'prdouct Info';
   const stock = 2;
   const isCarousal = useRef(null);
   const [quantity, setQuntity] = useState(1);
   const images = [
     {
       id: 1,
-      url: "https://i5.walmartimages.com/asr/35b47efa-88ba-46ab-9faa-71096e67aed7.a7275eab204a8d8dc3d7949f0dbe74cc.jpeg",
+      url: 'https://i5.walmartimages.com/asr/35b47efa-88ba-46ab-9faa-71096e67aed7.a7275eab204a8d8dc3d7949f0dbe74cc.jpeg',
     },
     {
       id: 2,
-      url: "https://images-na.ssl-images-amazon.com/images/G/02/aplusautomation/vendorimages/0b925aaf-0920-4019-a78e-dbe23cc1d1fa.jpg._CB536181688_.jpg",
+      url: 'https://images-na.ssl-images-amazon.com/images/G/02/aplusautomation/vendorimages/0b925aaf-0920-4019-a78e-dbe23cc1d1fa.jpg._CB536181688_.jpg',
     },
   ];
 
@@ -48,18 +41,19 @@ const ProductDetails = ({
   };
 
   const addToCartHandler = () => {
-    console.log('a')
-    if(stock === 0) return Toast.show({
-      type: 'error',
-      text1: 'Out of Stock',
-    });
+    console.log('a');
+    if (stock === 0)
+      return Toast.show({
+        type: 'error',
+        text1: 'Out of Stock',
+      });
     else {
       Toast.show({
         type: 'success',
-        text1: "Added to Cart"
-      })
+        text1: 'Added to Cart',
+      });
     }
-  }
+  };
   return (
     <View
       style={{
@@ -70,6 +64,7 @@ const ProductDetails = ({
     >
       <Header isBack={true} />
       {/* Carousal */}
+      {/* <View style={{}}> */}
       <Carousel
         layout="default"
         sliderWidth={SLIDER_WIDTH}
@@ -78,12 +73,14 @@ const ProductDetails = ({
         data={images}
         renderItem={CarousalCardItem}
       />
+      {/* </View> */}
+
       <View
         style={{
           backgroundColor: colors.color2,
           padding: 35,
           flex: 1,
-          marginTop: -380,
+          marginTop: -400,
           borderTopRightRadius: 55,
           borderTopLeftRadius: 55,
         }}
@@ -91,7 +88,7 @@ const ProductDetails = ({
         <Text
           numberOfLines={2}
           style={{
-            color: "black",
+            color: 'black',
             fontSize: 20,
           }}
         >
@@ -100,7 +97,7 @@ const ProductDetails = ({
         <Text
           numberOfLines={2}
           style={{
-            color: "black",
+            color: 'black',
             fontSize: 20,
           }}
         >
@@ -118,16 +115,16 @@ const ProductDetails = ({
         </Text>
         <View
           style={{
-            flexDirection: "row",
-            justifyContent: "space-between",
-            alignItems: "center",
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'center',
             paddingHorizontal: 5,
           }}
         >
           <Text
             style={{
               color: colors.colors3,
-              fontWeight: "100",
+              fontWeight: '100',
             }}
           >
             Qunatity
@@ -135,14 +132,14 @@ const ProductDetails = ({
           <View
             style={{
               width: 80,
-              flexDirection: "row",
-              justifyContent: "space-between",
-              alignItems: "center",
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              alignItems: 'center',
             }}
           >
             <TouchableOpacity onPress={decrementQty}>
               <Avatar.Icon
-                icon={"minus"}
+                icon={'minus'}
                 size={20}
                 style={{
                   borderRadius: 5,
@@ -157,8 +154,8 @@ const ProductDetails = ({
                 backgroundColor: colors.colors4,
                 height: 25,
                 width: 25,
-                textAlignVertical: "center",
-                textAlign: "center",
+                textAlignVertical: 'center',
+                textAlign: 'center',
                 borderWidth: 1,
                 borderRadius: 5,
                 borderColor: colors.colors5,
@@ -168,7 +165,7 @@ const ProductDetails = ({
             </Text>
             <TouchableOpacity onPress={incrementQty} activeOpacity={0.8}>
               <Avatar.Icon
-                icon={"plus"}
+                icon={'plus'}
                 size={20}
                 style={{
                   borderRadius: 5,
@@ -181,9 +178,9 @@ const ProductDetails = ({
           </View>
         </View>
         <TouchableOpacity activeOpacity={0.8} onPress={addToCartHandler}>
-          <Button icon={"cart"} style={style.btn}
-           textColor={colors.color2}
-          >Add to Cart</Button>
+          <Button icon={'cart'} style={style.btn} textColor={colors.color2}>
+            Add to Cart
+          </Button>
         </TouchableOpacity>
       </View>
     </View>
@@ -207,13 +204,13 @@ const style = StyleSheet.create({
   },
   image: {
     width: ITEM_WIDTH,
-    resizeMode: "contain",
+    resizeMode: 'contain',
     height: 200,
   },
   btn: {
     backgroundColor: colors.colors3,
     borderRadius: 100,
     padding: 5,
-  }
+  },
 });
 export default ProductDetails;

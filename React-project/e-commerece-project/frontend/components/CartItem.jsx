@@ -25,11 +25,11 @@ export default function Cartitem({ item }) {
             uri: image,
           }}
           style={{
-            width: 150,
+            width: 100,
             height: 100,
             resizeMode: 'contain',
-            top: '-20%',
-            left: '10%',
+            top: '0%',
+            left: '20%',
           }}
         />
       </View>

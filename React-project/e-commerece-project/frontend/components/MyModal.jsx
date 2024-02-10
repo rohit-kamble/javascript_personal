@@ -21,7 +21,9 @@ export default function MyModal({ deleteHandler, id, navigate, setOpenModal }) {
           }}
         />
       </TouchableOpacity>
-      <Text style={styles.text}>Edit</Text>
+      <Text style={styles.text} onPress={() => navigate.navigate('updateproduct', { id })}>
+        Edit
+      </Text>
       <Button textColor={colors.color1} onPress={() => deleteHandler(id)}>
         Delete
       </Button>
@@ -43,5 +45,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontWeight: '900',
+    alignSelf: 'center',
+    justifyContent: 'center',
   },
 });

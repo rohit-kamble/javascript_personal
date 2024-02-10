@@ -15,11 +15,11 @@ export default function AdminDashboard({ navigation }) {
       case 'Category':
         navigation.navigate('categories');
         break;
-      case 'All order':
-        navigation.navigate('adminpannel');
+      case 'All Orders':
+        navigation.navigate('adminorder');
         break;
       case 'Product':
-        navigation.navigate('newProduct');
+        navigation.navigate('newproduct');
         break;
       default:
         break;
@@ -63,7 +63,7 @@ export default function AdminDashboard({ navigation }) {
                 text={'All Orders'}
                 handler={navigationHandler}
               />
-              <ButtonBox icon={'plus'} text={'Catqgory'} handler={navigationHandler} />
+              <ButtonBox icon={'plus'} text={'Category'} handler={navigationHandler} />
             </View>
           </View>
           <ProductListHeading />
